@@ -28,3 +28,19 @@ Las funciones de pago y correo requieren variables de entorno. Usa `.env.example
 - `desarrollo`: integración de los cambios antes de enviarlos a `main`.
 
 Las modificaciones deben realizarse en una rama creada desde `desarrollo` y entregarse mediante un Pull Request hacia `desarrollo`.
+
+## Recursos visuales
+
+Por seguridad, esta versión pública incluye el código y los recursos de texto. Las fotografías, certificados, logos de pago e imágenes promocionales deben agregarse en el entorno privado cuando se confirme que pueden compartirse públicamente.
+
+## Pagos
+
+Las integraciones de pago se publican sin llaves, identificadores comerciales ni datos de transacciones. Configure las variables `CURSOS_PAYMENT_*` y las claves públicas del navegador únicamente en el servidor o mediante un archivo local ignorado por Git.
+
+## Contacto de soporte
+
+Los enlaces de WhatsApp y los datos de cobro manual se han sustituido por marcadores. Configure un canal de soporte institucional antes de habilitarlos en producción.
+
+## Dependencia de correo
+
+Después de clonar el repositorio, ejecute `composer install` en la raíz para instalar PHPMailer. Las copias antiguas de la librería y las páginas HTML históricas se excluyeron para mantener el repositorio liviano.

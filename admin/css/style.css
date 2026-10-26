@@ -1,0 +1,1010 @@
+/* =========== Google Fonts ============ */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+/* =============== Globals ============== */
+* {
+  font-family: "Ubuntu", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #fff;
+  --gray: #f5f5f5;
+  --black1: #222;
+  --black2: #999;
+  --red: #c00d0d;
+  --warning: #FFC107;
+  --success: #198754;
+  --extras: #1BB295;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.sp1 {
+  grid-column: span 1;
+}
+
+.sp2 {
+  grid-column: span 2;
+}
+
+.sp3 {
+  grid-column: span 3;
+}
+
+.sp4 {
+  grid-column: span 4;
+}
+
+.sp5 {
+  grid-column: span 5;
+}
+
+.sp6 {
+  grid-column: span 6;
+}
+
+/* Botones */
+.btn {
+  position: relative;
+  padding: 5px 10px;
+  text-decoration: none;
+  border-radius: 6px;
+  margin: 2.5px;
+}
+
+.btn-main {
+  background: var(--red);
+  color: var(--white);
+}
+
+.btn-view {
+  background: var(--gray);
+  color: var(--red);
+}
+
+.btn-new,
+.btn-success {
+  background: var(--success);
+  color: var(--white);
+}
+
+.btn-edit {
+  background: var(--warning);
+  color: var(--black1);
+}
+
+.btn-delete {
+  background: var(--red);
+  color: var(--white);
+}
+
+.btn-extras {
+  background: var(--extras);
+  color: var(--white);
+}
+
+.btn-100 {
+  width: 100%;
+}
+
+.submit-btn .btn,
+.submit-btn .btn {
+  font-size: 16px;
+  padding: 13px 0;
+  transition: 0.2s ease;
+}
+
+/* =============== Menu ================ */
+.menu {
+  position: fixed;
+  width: 275px;
+  height: 100%;
+  background: var(--red);
+  border-left: 10px solid var(--red);
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.menu.active {
+  width: 80px;
+}
+
+.menu ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.menu ul li {
+  position: relative;
+  width: 100%;
+  list-style: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.menu ul li .copyright {
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  height: 50px;
+}
+
+.menu ul li:hover,
+.menu ul li.hovered {
+  background-color: var(--white);
+}
+
+.menu ul li:nth-child(1) {
+  margin-bottom: 10px;
+  pointer-events: none;
+}
+
+.menu ul li:nth-last-child(2) {
+  position: absolute;
+  bottom: 50px;
+  cursor: pointer;
+}
+
+.menu ul li:last-child {
+  position: absolute;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.menu ul li a,
+.menu ul li div {
+  position: relative;
+  display: block;
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: var(--white);
+}
+
+.menu ul li:hover a,
+.menu ul li.hovered a {
+  color: var(--red);
+}
+
+.menu ul li a .icon {
+  position: relative;
+  display: block;
+  min-width: 60px;
+  height: 60px;
+  line-height: 75px;
+  text-align: center;
+}
+
+.menu ul li a .icon ion-icon,
+.menu ul li .copyright .icon,
+.menu ul li a .letra {
+  font-size: 1.75rem;
+}
+
+.menu ul li a img {
+  width: 25px;
+}
+
+.menu ul li a .titulo {
+  position: relative;
+  display: block;
+  padding: 0 10px;
+  height: 60px;
+  line-height: 60px;
+  text-align: start;
+  white-space: nowrap;
+}
+
+.menu ul li .copyright .icon,
+.menu ul li a .letra {
+  position: relative;
+  display: block;
+  min-width: 60px;
+  line-height: 60px;
+  text-align: center;
+}
+
+.menu ul li .copyright .titulo {
+  position: relative;
+  display: block;
+  padding: 0 10px;
+  font-size: 12px;
+  line-height: 25px;
+  white-space: nowrap;
+}
+
+.menu ul li:hover a::before,
+.menu ul li.hovered a::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 35px 35px 0 10px var(--white);
+  pointer-events: none;
+}
+
+.menu ul li:hover a::after,
+.menu ul li.hovered a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 35px -35px 0 10px var(--white);
+  pointer-events: none;
+}
+
+/* ===================== Main ===================== */
+.main {
+  position: absolute;
+  width: calc(100% - 275px);
+  left: 275px;
+  min-height: 100vh;
+  background: var(--white);
+  transition: 0.5s;
+}
+
+.main.active {
+  width: calc(100% - 80px);
+  left: 80px;
+}
+
+.topbar {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.toggle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.nombre-usuario {
+  position: relative;
+  width: 400px;
+  margin: 0 10px;
+  text-align: center;
+}
+
+.user {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.user img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ======================= Dashboard Cards ====================== */
+.cardBox {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+}
+
+.cardBox .card {
+  position: relative;
+  background: var(--white);
+  padding: 30px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+
+.cardBox .card .numbers {
+  position: relative;
+  font-weight: 500;
+  font-size: 2.5rem;
+  color: var(--red);
+}
+
+.cardBox .card .cardName {
+  color: var(--black2);
+  font-size: 1.1rem;
+  margin-top: 5px;
+}
+
+.cardBox .card .iconBx {
+  font-size: 3.5rem;
+  color: var(--black2);
+}
+
+.cardBox .card:hover {
+  background: var(--red);
+}
+
+.cardBox .card:hover .numbers,
+.cardBox .card:hover .cardName,
+.cardBox .card:hover .iconBx {
+  color: var(--white);
+}
+
+
+/* ================== Tablas ============== */
+.tabla {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+}
+
+.tabla-sub {
+  grid-template-columns: 1fr;
+}
+
+.tabla .lista {
+  position: relative;
+  background: var(--white);
+  padding: 20px;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  grid-column: span 2;
+}
+
+.tabla .cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.cardHeader h2 {
+  font-weight: 600;
+  color: var(--red);
+}
+
+.tabla table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.tabla table thead td {
+  font-weight: 600;
+}
+
+.tabla .lista table tr {
+  color: var(--black1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.tabla .lista table tr:last-child {
+  border-bottom: none;
+}
+
+.tabla .lista table tbody tr:hover {
+  background: var(--red);
+  color: var(--white);
+}
+
+.tabla .lista table tr td {
+  padding: 10px;
+}
+
+.docentes_dashboard {
+  position: relative;
+  max-height: 500px;
+  padding: 20px;
+  background: var(--white);
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+}
+
+.docentes_dashboard .imgBx,
+.img-listas {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.docentes_dashboard .imgBx img,
+.img-listas img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-listas-cursos {
+  position: relative;
+  width: 125px;
+  height: 69px;
+  border-radius: 15px;
+  overflow: auto;
+}
+
+.img-listas-cursos img,
+.img-listas-programas img,
+.img-listas-membresias img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.docentes_dashboard table tr td {
+  padding: 12px 10px;
+}
+
+.docentes_dashboard table tr td h4 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2rem;
+}
+
+.docentes_dashboard table tr td h4 span {
+  font-size: 14px;
+  color: var(--black2);
+}
+
+.docentes_dashboard table tr:hover {
+  background: var(--red);
+  color: var(--white);
+}
+
+.docentes_dashboard table tr:hover td h4 span {
+  color: var(--white);
+}
+
+/* ====================== Registrar ========================== */
+.registro {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 30px;
+}
+
+.registro .formulario {
+  position: relative;
+  background: var(--white);
+  padding: 20px;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+}
+
+.formulario .cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.cardHeader h2 {
+  font-weight: 600;
+  color: var(--red);
+}
+
+form {
+  padding: 25px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  column-gap: 1rem;
+}
+
+form.form-cursos {
+  padding: 0;
+}
+
+form .form-group,
+.modal .modal-group,
+.cant_registros .reg-group {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+form .nombre {
+  grid-column: span 6;
+}
+
+form .precio,
+form .descuento,
+form .categoria,
+form .docente {
+  grid-column: span 3;
+}
+
+form .precio-new,
+form .descuento-new,
+form .categoria-new,
+form .docente-new,
+form .estado-new {
+  grid-column: span 2;
+}
+
+form .dur,
+form .videos,
+form .foto,
+form .horarios {
+  grid-column: span 2;
+}
+
+form .estado {
+  grid-column: span 3;
+}
+
+form .descripcion {
+  grid-column: span 6;
+}
+
+form .modulos {
+  grid-column: span 2;
+}
+
+.btn-preguntas,
+.btn-modulos {
+  width: 100%;
+}
+
+.btn-preguntas input,
+.btn-modulos input {
+  width: 100%;
+  height: 45px;
+  font-size: medium;
+}
+
+form .tit-contenido {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.btn-temas {
+  padding-left: 100px;
+  width: 100%;
+}
+
+form .temas {
+  grid-column: span 1;
+}
+
+.camTemas {
+  grid-column: span 6;
+}
+.camTemas form .tit-contenido {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.camposPreguntas form .botones,
+.camposModulos form .botones {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 25px;
+  align-items: end;
+}
+
+.camposPreguntas form .botones .btn,
+.camposModulos form .botones .btn {
+  height: 45px;
+}
+
+form .docente_nom,
+form .docente_pais,
+form .docente_dni,
+form .docente_foto {
+  grid-column: span 3;
+}
+
+form .admin_nom {
+  grid-column: span 3;
+}
+
+form .admin_correo {
+  grid-column: span 4;
+}
+
+form .admin_dni,
+form .admin_pass,
+form .admin_foto,
+form .admin_estado,
+form .docente_foto_edit,
+form .pais_foto {
+  grid-column: span 2;
+}
+
+form .admin_foto_edit,
+form .admin_foto_preview,
+form .docente_foto_preview,
+form .pais_foto_preview,
+form .curso_foto_preview {
+  grid-column: span 1;
+}
+
+form .pais_nom {
+  grid-column: span 6;
+}
+
+form .pais_estado,
+form .categoria_nom,
+form .categoria_estado {
+  grid-column: span 3;
+}
+
+form label,
+.modal label {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 7px;
+}
+
+form input,
+form select,
+.modal input {
+  height: 45px;
+  padding: 10px;
+  width: 100%;
+  font-size: 15px;
+  outline: none;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #bfbfbf;
+}
+
+form input:focus,
+form select:focus {
+  border-color: #9a9a9a;
+}
+
+form input.error,
+form select.error {
+  border-color: #f91919;
+  background: #f9f0f1;
+}
+
+form small {
+  font-size: 14px;
+  margin-top: 5px;
+  display: block;
+  color: #f91919;
+}
+
+form .password i {
+  position: absolute;
+  right: 0px;
+  height: 45px;
+  top: 28px;
+  font-size: 13px;
+  line-height: 45px;
+  width: 45px;
+  cursor: pointer;
+  color: #939393;
+  text-align: center;
+}
+
+.submit-btn {
+  margin-top: 30px;
+}
+
+.btn-modulos,
+.btn-temas {
+  margin-top: 24px;
+}
+
+.btn-modulos input,
+.btn-temas input {
+  border: none;
+  height: auto;
+  font-size: 16px;
+  padding: 13px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  text-align: center;
+  transition: 0.2s ease;
+}
+
+.form-lista {
+  grid-template-columns: 1fr;
+}
+
+.btn {
+  border: none;
+  cursor: pointer;
+}
+
+.formulario .submit-btn {
+  grid-column: span 6;
+}
+
+/* ======================= Login ======================= */
+.container-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--red);
+}
+
+.form-login {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border-radius: 50px;
+  text-align: center;
+  align-items: center;
+  padding: 50px 100px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
+  width: auto;
+}
+
+.form-login img {
+  width: 100px;
+  margin-bottom: 25px;
+}
+
+.form-login h1 {
+  color: var(--black1);
+  font-size: 35px;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+.form-login label {
+  margin-bottom: 35px;
+}
+
+.form-login label .fa-solid {
+  font-size: 20px;
+  color: var(--red);
+  margin-right: 10px;
+}
+
+.form-login label input {
+  outline: none;
+  border: none;
+  color: var(--black1);
+  border-bottom: solid 1px var(--red);
+  padding: 0 5px;
+  font-size: 18px;
+}
+
+.form-login button {
+  border: none;
+  border-radius: 15px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+form.form-tema {
+  padding-left: 100px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 4% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 24px;
+  width: 75%;
+  transition: all 0.5s ease;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.modal-informacion {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 1rem;
+  padding: 25px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-group.modal-foto {
+  grid-column: span 1;
+  grid-row-start: 1;
+  grid-row-end: 4;
+}
+
+.modal-group.modal-certificado {
+  grid-column: span 4;
+  grid-row-start: 1;
+  grid-row-end: 5;
+}
+
+.img-modal {
+  width: 100%;
+  height: 100%;
+}
+
+.img-modal img {
+  object-fit: contain;
+  max-width: 200px;
+  height: 100%;
+}
+
+.img-modal-certificado img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+form.form-search{
+  padding: 0;
+  width: 400px;
+  grid-template-columns: 1fr;
+}
+
+.search,
+.cant-registros {
+  width: 400px;
+  padding: 10px;
+}
+
+.search label {
+  position: relative;
+  width: 100%;
+}
+
+.search label input {
+  width: 100%;
+  height: 40px;
+  border-radius: 40px;
+  padding: 5px 20px;
+  padding-left: 35px;
+  font-size: 18px;
+  outline: none;
+  border: 1px solid var(--black2);
+}
+
+.search label ion-icon {
+  position: absolute;
+  top: -1px;
+  left: 10px;
+  font-size: 1.2rem;
+}
+
+/* ====================== Responsive ========================== */
+@media (max-width: 991px) {
+  .form-login {
+    padding: 25px 50px;
+  }
+
+  .menu {
+    left: -300px;
+  }
+
+  .menu.active {
+    width: 300px;
+    left: 0;
+  }
+
+  .main {
+    width: 100%;
+    left: 0;
+  }
+
+  .main.active {
+    left: 300px;
+  }
+
+  .cardBox {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .tabla {
+    grid-template-columns: 1fr;
+  }
+
+  .lista {
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .cardBox {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .cardHeader h2 {
+    font-size: 20px;
+  }
+
+  .user {
+    min-width: 40px;
+  }
+
+  .menu {
+    width: 100%;
+    left: -100%;
+    z-index: 1000;
+  }
+
+  .menu.active {
+    width: 50%;
+    left: 0;
+  }
+
+  .toggle {
+    z-index: 10001;
+  }
+
+  .main.active .toggle {
+    color: #fff;
+    position: fixed;
+    right: calc(50%);
+    /* left: initial; */
+  }
+}

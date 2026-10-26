@@ -1,0 +1,7 @@
+{
+  "php.validate.enable": true,
+  "php.validate.executablePath": "C:\\xampp\\php\\php.exe",
+  "files.associations": {
+    "*.php": "php"
+  }
+}
